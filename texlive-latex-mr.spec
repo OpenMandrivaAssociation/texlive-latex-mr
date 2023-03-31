@@ -1,6 +1,6 @@
 Name:		texlive-latex-mr
 Version:	55475
-Release:	1
+Release:	2
 Summary:	A practical guide to LaTeX and Polyglossia for Marathi and other Indian languages
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/latex-mr
