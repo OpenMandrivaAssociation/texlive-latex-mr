@@ -3,7 +3,7 @@ Version:	55475
 Release:	2
 Summary:	A practical guide to LaTeX and Polyglossia for Marathi and other Indian languages
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/latex-mr
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/latex-mr
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-mr.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-mr.doc.r%{version}.tar.xz
