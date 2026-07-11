@@ -1,41 +1,27 @@
-Name:		texlive-latex-mr
-Version:	55475
-Release:	2
-Summary:	A practical guide to LaTeX and Polyglossia for Marathi and other Indian languages
+%global tl_name latex-mr
+%global tl_revision 55475
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
+Summary:	A practical guide to LaTeX and Polyglossia for Marathi and other Indian langu...
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/latex-mr
+URL:		https://www.ctan.org/tex-archive/info/latex-mr
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-mr.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-mr.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-mr.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/latex-mr.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides a short guide to LaTeX and specifically to
-the polyglossia package. This document aims to introduce LaTeX
-and polyglossia for Indian languages. Though the document often
-discusses the language Marathi, the discussion applies to other
-India languages also, with some minute changes which are
-described in Section 1.2. We assume that the user of this
-document knows basic (La)TeX or has, at least, tried her hand
-on it. This document is not very suitable for first time users.
+The package provides a short guide to LaTeX and specifically to the
+polyglossia package. This document aims to introduce LaTeX and
+polyglossia for Indian languages. Though the document often discusses
+the language Marathi, the discussion applies to other India languages
+also, with some minute changes which are described in Section 1.2. We
+assume that the user of this document knows basic (La)TeX or has, at
+least, tried her hand on it. This document is not very suitable for
+first time users.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/doc/latex/latex-mr
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
